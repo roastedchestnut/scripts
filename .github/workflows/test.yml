@@ -3,7 +3,7 @@ name: Clean Test Case Compilation HW-2 C-2
 on:
   push:
     paths:
-      - 'test'
+      - 'test/**'
       
 jobs:
   build:
