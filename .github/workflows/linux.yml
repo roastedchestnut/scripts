@@ -1,0 +1,28 @@
+name: Build Linux HW-2 C-1
+
+on:
+  push:
+    paths:
+      - 'linux/**'
+      
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+      with:
+        submodules: 'true'
+
+    - name: Download and Unzip Linux
+      shell: bash
+      run: |
+        wget https://github.com/roastedchestnut/linux/archive/$(git rev-parse HEAD:linux).zip
+        unzip $(git rev-parse HEAD:linux).zip
+
+
+    - name: Build Linux
+      shell: bash
+      run: |
+        ./build-linux.sh linux-$(git rev-parse HEAD:linux) tinyconfig
