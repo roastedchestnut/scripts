@@ -1,4 +1,4 @@
 [submodule "linux"]
 	path = linux
 	url = git@github.com:roastedchestnut/linux
-	branch = csi21150-f21-v3
+	branch = csi2115-f21-v3
